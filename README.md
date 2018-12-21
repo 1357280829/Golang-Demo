@@ -66,4 +66,39 @@ Go中的异常处理error源码,非常简单
 
 可以使用`import "errors"`来实现Go自带的异常,也可以自己定义,自定义方式可以参照error源码模拟实现
 
-    
+#### 5.自定义包
+
+在$GOPATH/src下面开发自己包,看以下案例
+
+包源码文件目录`$GOPATH/src/darius/dpkg/dpkg.go`
+
+包源码如下:
+
+```
+    package dpkg //  包名
+
+    func Test(s string) string {
+            newStr := s
+            return newStr
+    }
+```
+
+开发完包后,使用命令`go install darius/dpkg`(注意这里指向目录),该命令会帮我们自动生成包对象`$GOPATH/pkg/darius/dpkg.a`
+
+接着就可以在项目中使用自己开发的包,使用方式如下
+
+```
+
+package main
+
+import (
+	"fmt"
+	"darius/dpkg" //  注意引入的是路径
+)
+
+func main() {
+	s := dpkg.Test("niubi") //  使用时才会用到包名
+	fmt.Printf("你好啊,%s", s)
+}
+
+```
