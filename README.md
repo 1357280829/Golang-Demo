@@ -83,7 +83,9 @@ Go中的异常处理error源码,非常简单
     }
 ```
 
-开发完包后,使用命令`go install darius/dpkg`(注意这里指向目录),该命令会帮我们自动生成包对象`$GOPATH/pkg/darius/dpkg.a`
+开发完包后,使用Go命令`go install darius/dpkg`(注意这里指向目录)
+
+该命令会帮我们自动生成包对象`$GOPATH/pkg/darius/dpkg.a`
 
 接着就可以在项目中使用自己开发的包,使用方式如下
 
