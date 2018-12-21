@@ -36,4 +36,34 @@
 (4)Array的数据类型由元素类型+数组长度决定，即[2]int和[3]int是不同的；而Slice的数据类型仅由元素类型决定
 
 (5)Array赋值时是值拷贝；Slice赋值时是指针拷贝
+
+#### 4.error异常处理
+
+Go中的异常处理error源码,非常简单
+
+```
+    // Copyright 2011 The Go Authors. All rights reserved.
+    // Use of this source code is governed by a BSD-style
+    // license that can be found in the LICENSE file.
+
+    // Package errors implements functions to manipulate errors.
+    package errors
+
+    // New returns an error that formats as the given text.
+    func New(text string) error {
+            return &errorString{text}
+    }
+
+    // errorString is a trivial implementation of error.
+    type errorString struct {
+            s string
+    }
+
+    func (e *errorString) Error() string {
+            return e.s
+    }
+```
+
+可以使用`import "errors"`来实现Go自带的异常,也可以自己定义,自定义方式可以参照error源码模拟实现
+
     
