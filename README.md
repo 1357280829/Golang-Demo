@@ -77,7 +77,7 @@ Go中的异常处理error源码,非常简单
 ```
     package dpkg //  包名
 
-    func Test(s string) string {
+    func Test(s string) string { //  特别注意,函数名首字母大写表示共有
             newStr := s
             return newStr
     }
