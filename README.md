@@ -88,7 +88,6 @@ Go中的异常处理error源码,非常简单
 接着就可以在项目中使用自己开发的包,使用方式如下
 
 ```
-
 package main
 
 import (
@@ -100,5 +99,4 @@ func main() {
 	s := dpkg.Test("niubi") //  使用时才会用到包名
 	fmt.Printf("你好啊,%s", s)
 }
-
 ```
