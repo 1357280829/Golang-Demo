@@ -68,7 +68,7 @@ Go中的异常处理error源码,非常简单
 
 #### 5.自定义包
 
-在$GOPATH/src下面开发自己包,看以下案例
+在`$GOPATH/src`下面开发自己包,看以下案例
 
 包源码文件目录`$GOPATH/src/darius/dpkg/dpkg.go`
 
